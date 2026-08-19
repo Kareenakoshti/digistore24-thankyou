@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — 50 ChatGPT Prompts for Freelancers | FrontendForge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B0D10;
+    --bg-panel: #12151A;
+    --line: #22262E;
+    --text: #E9ECF1;
+    --text-dim: #8A93A3;
+    --accent: #6EE7B7;
+    --accent-dim: #2F5D4C;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding: 24px;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* subtle grid backdrop, code-forge motif */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity:0.25;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 0%, transparent 75%);
+    pointer-events:none;
+  }
+
+  .card{
+    position:relative;
+    width:100%;
+    max-width: 560px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 48px 40px 40px;
+    animation: rise .6s cubic-bezier(.16,1,.3,1);
+  }
+
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .terminal-dot{
+    display:flex;
+    gap:6px;
+    margin-bottom: 28px;
+  }
+  .terminal-dot span{
+    width:10px; height:10px; border-radius:50%;
+    background: var(--line);
+  }
+  .terminal-dot span:nth-child(1){ background:#4a3c3c; }
+  .terminal-dot span:nth-child(2){ background:#4a4530; }
+  .terminal-dot span:nth-child(3){ background: var(--accent-dim); }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .eyebrow::before{ content:"✓ "; }
+
+  h1{
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .sub{
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .sub strong{ color: var(--text); font-weight:600; }
+
+  .download-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding: 16px 24px;
+    background: var(--accent);
+    color: #08110D;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 8px;
+    text-decoration:none;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 0 0 0 rgba(110,231,183,0.4);
+  }
+  .download-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(110,231,183,0.5);
+  }
+  .download-btn:active{ transform: translateY(0); }
+
+  .meta-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  .meta-row a{
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+  .meta-row a:hover{ color: var(--accent); }
+
+  .legal-note{
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #5B6472;
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card{ animation: none; }
+    .download-btn{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="terminal-dot"><span></span><span></span><span></span></div>
+
+    <div class="eyebrow">Order confirmed</div>
+    <h1>Your download is ready.</h1>
+    <p class="sub">
+      Thanks for picking up <strong id="product-name">50 ChatGPT Prompts for Freelancers – Save Hours on Client Work</strong> from FrontendForge.
+      Your receipt is on its way to your inbox — the link below unlocks your files right now.
+    </p>
+
+    <a href="https://frontendforgeshop.gumroad.com/l/sectwc" id="download-link" class="download-btn" target="_blank" rel="noopener">
+      ↓ Download your files
+    </a>
+
+    <div class="meta-row">
+      <span>FrontendForge</span>
+      <a href="mailto:support@frontendforge.example">Need help? Email us</a>
+    </div>
+
+    <p class="legal-note">
+      The debit will be performed by Digistore24.com
+    </p>
+  </div>
+
+</body>
+</html>
